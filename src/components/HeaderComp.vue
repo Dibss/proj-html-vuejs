@@ -1,17 +1,14 @@
 <template>
   <div>
-    <div id="logo">
-
-    </div>
-    <nav id="menu-head">
-
-    </nav>
+    <NavComp/>
   </div>
 </template>
 
 <script>
+import NavComp from "./partials/NavComp.vue";
 export default {
-name: 'HeaderComp',
+    name: "HeaderComp",
+    components: { NavComp }
 }
 </script>
 

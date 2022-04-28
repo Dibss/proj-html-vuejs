@@ -41,6 +41,8 @@ a{text-decoration: none;}
 .row{display: flex; flex-wrap: nowrap;}
 .jc-between{justify-content: space-between;}
 .ai-center{align-items: center;}
+.flex-wrap{flex-wrap: wrap;}
+.flex-column{flex-direction: column;}
 
 .text-uppercase{text-transform: uppercase;}
 .text-capitalize{text-transform: capitalize;}
@@ -51,7 +53,9 @@ a{text-decoration: none;}
 .fs-6{font-size: 3rem;}
 .fs-8{font-size: 4rem;}
 
+.mr-1{margin-right: 0.5em;}
 .mr-2{margin-right: 1em;}
+.mt-3{margin-top: 1.5em;}
 .my-4{margin: 2em 0;}
 .mx-2{margin: 0 1em;}
 

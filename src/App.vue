@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <HeaderComp/>
+    <header>
+      <HeaderComp/>
+    </header>
   </div>
 </template>
 
@@ -17,7 +19,7 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
+*{padding: 0; margin: 0; box-sizing: border-box;}
 #app{
   font-family: 'Roboto', sans-serif;
 }
@@ -25,7 +27,12 @@ export default {
 li{list-style-type: none;}
 a{text-decoration: none;}
 
+.d-block{display: block;}
 .text-uppercase{text-transform: uppercase;}
+.fw-bold{font-weight: 700;}
+.fw-light{font-weight: 300;}
+.fs-6{font-size: 3rem;}
+.fs-8{font-size: 4rem;}
 
 $white : #fff;
 $mine-shaft : #272727;

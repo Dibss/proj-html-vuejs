@@ -65,7 +65,7 @@ nav{
   align-items: center;
   width: 70%;
   margin: 0 auto;
-  padding: 1em 0;
+  padding: 2em 0;
   #top-right{
     display: flex;
     align-items: center;

@@ -1,6 +1,22 @@
 <template>
   <div>
-    <div class="map"></div>
+    <div class="map">
+      <div class="map-satellite">
+        <span>Map</span>
+        <span class="t-gray">Satellite</span>
+      </div>
+      <div class="marker">
+        <img src="../../assets/img/default_marker.png" alt="location marker">
+      </div>
+      <div class="user-marker">
+        <img src="../../assets/img/image (4).svg" alt="location marker" draggable="true" id="marker-release" @click="markerClick()">
+        <img src="../../assets/img/image (6).svg" alt="location marker" class="d-none" id="marker-click" @click="markerRelease()">
+      </div>
+      <div class="zoom">
+        <div><i class="fa-solid fa-plus"></i></div>
+        <div><i class="fa-solid fa-minus"></i></div>
+      </div>
+    </div>
     <div class="location-hero">
       <div class="col-12">
         <h3 class="text-uppercase">location</h3>
@@ -22,13 +38,70 @@
 <script>
 export default {
 name: 'LocationComp',
+methods : {
+  markerClick(){
+    document.querySelector("#marker-click").classList.remove("d-none")
+    document.querySelector("#marker-release").classList.add("d-none")
+  },
+  markerRelease(){
+    document.querySelector("#marker-click").classList.add("d-none")
+    document.querySelector("#marker-release").classList.remove("d-none")
+  }
+}
 }
 </script>
 
 <style scoped lang='scss'>
 .map{
   height: 50vh;
-  background-color: gray;
+  background-image: url("../../assets/img/map.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  .map-satellite{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    span{
+      background-color: #fff;
+      padding: 0.5em 1em;
+      border: 1px solid #868686;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+  }
+  .marker{
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(50%,-50%);
+  }
+  .user-marker{
+    position: absolute;
+    right: 10px;
+    bottom: 30%;
+    background-color: #fff;
+    padding: 0.5em 0.3em 0.3em 0.6em;
+    img{
+      max-width: 100%;
+      height: auto;
+      width: 80%;
+      cursor: pointer;
+    }
+  }
+  .zoom{
+    position: absolute;
+    right: 10px;
+    bottom: 10%;
+    div i{
+      background-color: #fff;
+      padding: 1em 1em;
+      border: 1px solid #868686;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+  }
 }
 .location-hero{
   background-image: url("../../assets/img/location-bg.jpg");

@@ -6,18 +6,23 @@
     <main>
       <MainComp/>
     </main>
+    <footer>
+      <FooterComp/>
+    </footer>
   </div>
 </template>
 
 <script>
 import HeaderComp from "./components/HeaderComp.vue";
 import MainComp from "./components/MainComp.vue";
+import FooterComp from "./components/FooterComp.vue";
 
 export default {
   name: 'App',
   components: {
     HeaderComp,
-    MainComp
+    MainComp,
+    FooterComp
 }
 }
 </script>
@@ -33,6 +38,8 @@ export default {
 
 li{list-style-type: none;}
 a{text-decoration: none;}
+
+.p-relative{position: relative;}
 
 .d-block{display: block;}
 .d-none{display: none;}
@@ -58,6 +65,9 @@ a{text-decoration: none;}
 .fs-6{font-size: 3rem;}
 .fs-8{font-size: 4rem;}
 
+.t-scarlet{color: #f72b0c;}
+.t-gray{color: #868686;}
+
 .mr-1{margin-right: 0.5em;}
 .mr-2{margin-right: 1em;}
 .ml-3{margin-left: 1.5em;}
@@ -76,7 +86,7 @@ a{text-decoration: none;}
 
 .bg-lightgray{background-color: #f3f3f3;}
 .bg-white{background-color: #fff;}
-.bg-gray{background-color: lightgrey;}
+.bg-masala{background-color: #403d3b;}
 // for
 @for $i from 1 through 12 {
     .col-#{$i}{-ms-flex-preferred-size: calc(100% / 12) * $i; max-width: calc(100% / 12) * $i; flex-basis: calc(100% / 12) * $i;}

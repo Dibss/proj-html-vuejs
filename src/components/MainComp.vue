@@ -6,6 +6,8 @@
     <ProgramComp/>
     <RecentNewsComp/>
     <TicketsComp/>
+    <PresentationTwitterFeedComp/>
+    <SponsorComp/>
   </div>
 </template>
 
@@ -16,6 +18,8 @@ import SpeakersComp from "./partials/SpeakersComp.vue";
 import ProgramComp from "./partials/ProgramComp.vue";
 import RecentNewsComp from "./partials/RecentNewsComp.vue";
 import TicketsComp from "./partials/TicketsComp.vue";
+import PresentationTwitterFeedComp from "./partials/PresentationTwitterFeedComp.vue";
+import SponsorComp from "./partials/SponsorComp.vue";
 
 export default {
 name: 'MainComp',
@@ -25,7 +29,9 @@ components : {
     SpeakersComp,
     ProgramComp,
     RecentNewsComp,
-    TicketsComp
+    TicketsComp,
+    PresentationTwitterFeedComp,
+    SponsorComp
 }
 }
 </script>

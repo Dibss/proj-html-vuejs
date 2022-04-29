@@ -79,6 +79,7 @@ a{text-decoration: none;}
 .mt-2{margin-top: 1em;}
 .mt-3{margin-top: 1.5em;}
 .mt-4{margin-top: 2em;}
+.mb-1{margin-bottom: 0.5em;}
 .mb-2{margin-bottom: 1em;}
 .mb-4{margin-bottom: 2em;}
 .my-2{margin: 1em 0;}

@@ -13,7 +13,7 @@
               <span class="text-uppercase d-none"><i class="fa-solid fa-bullhorn"></i> sticky post</span>
             </div>
           </div>
-          <div class="d-flex jc-between col-8 flex-wrap fst-italic date-comments">
+          <div class="d-flex jc-between col-5 mb-1 flex-wrap fst-italic date-comments">
             <span class="fs-2">{{elm.date}}</span>
             <span class="fs-2">/</span>
             <span class="fs-2">{{elm.comments}}</span>

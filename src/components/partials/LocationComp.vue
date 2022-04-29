@@ -11,8 +11,8 @@
       <div class=location-hero__contacts>
         <hr>
         <div>
-          <span class="fs-1"><i class="fa-solid fa-phone"></i> +1-112-222-3344</span>
-          <span class="fs-1"><i class="fa-solid fa-envelope"></i>Contact@TheKeyNoteTheme.com</span>
+          <span class="fs-2"><i class="fa-solid fa-phone"></i> +1-112-222-3344</span>
+          <span class="fs-2"><i class="fa-solid fa-envelope"></i>Contact@TheKeyNoteTheme.com</span>
         </div>
       </div>
     </div>

@@ -46,6 +46,7 @@ a{text-decoration: none;}
 
 .d-flex{display: flex;}
 .row{display: flex; flex-wrap: nowrap;}
+.row-wrap{display: flex; flex-wrap: wrap;}
 .jc-between{justify-content: space-between;}
 .ai-center{align-items: center;}
 .flex-wrap{flex-wrap: wrap;}
@@ -59,8 +60,10 @@ a{text-decoration: none;}
 .fst-italic{font-style: italic;}
 .fw-bold{font-weight: 700;}
 .fw-light{font-weight: 300;}
+.fw-normal{font-weight: normal;}
 .fs-1{font-size: 0.7rem;}
 .fs-2{font-size: 0.8rem;}
+.fs-3{font-size: 0.9rem;}
 .fs-4{font-size: 1rem;}
 .fs-6{font-size: 3rem;}
 .fs-8{font-size: 4rem;}
@@ -70,15 +73,20 @@ a{text-decoration: none;}
 
 .mr-1{margin-right: 0.5em;}
 .mr-2{margin-right: 1em;}
+.mr-4{margin-right: 2em;}
+.ml-2{margin-left: 1em;}
 .ml-3{margin-left: 1.5em;}
 .mt-2{margin-top: 1em;}
 .mt-3{margin-top: 1.5em;}
+.mt-4{margin-top: 2em;}
 .mb-2{margin-bottom: 1em;}
 .mb-4{margin-bottom: 2em;}
 .my-2{margin: 1em 0;}
 .my-4{margin: 2em 0;}
 .mx-2{margin: 0 1em;}
 
+.p-1{padding: 0.2em;}
+.pr-2{padding-right: 1em;}
 .pt-3{padding-top: 3em;}
 .py-4{padding: 2em 0;}
 .py-2{padding: 1em 0;}
@@ -86,7 +94,8 @@ a{text-decoration: none;}
 
 .bg-lightgray{background-color: #f3f3f3;}
 .bg-white{background-color: #fff;}
-.bg-masala{background-color: #403d3b;}
+.bg-gray{background-color: lightgray;}
+.bg-mineshaft{background-color: #272727;}
 // for
 @for $i from 1 through 12 {
     .col-#{$i}{-ms-flex-preferred-size: calc(100% / 12) * $i; max-width: calc(100% / 12) * $i; flex-basis: calc(100% / 12) * $i;}

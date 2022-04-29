@@ -1,7 +1,7 @@
 <template>
   <div class="aboutus-container">
-    <h4 class="text-uppercase ls-1">about us</h4>
-    <span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+    <h4 class="text-uppercase ls-1 fw-normal">about us</h4>
+    <span class="d-block my-2 fw-light fs-3">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
     <div>
       <ul class="d-flex">
         <li>
@@ -9,6 +9,9 @@
         </li>
         <li>
           <a href="#"><i class='fa-brands fa-twitter-square'></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </li>
         <li>
           <a href="#"><i class='fa-brands fa-google-plus-square'></i></a>
@@ -32,7 +35,10 @@ name: 'AboutUsComp',
 
 <style scoped lang='scss'>
 .aboutus-container{
-  margin: 1em 0;
   color: #fff;
+  a{
+    color: #fff;
+    margin-right: 1em;
+  }
 }
 </style>

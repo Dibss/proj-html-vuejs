@@ -15,7 +15,11 @@
         <div class="program-container__program d-flex flex-wrap">
           <div class="program-days">
             <ul class="row">
-              <li v-for="elm in program" :key="elm.id" class="col-2">
+              <li v-for="elm in program" :key="elm.id" class="col-2 programDays" @click="switchDay()">
+                <h3 class="text-uppercase">{{elm.day}}</h3>
+                <span>{{elm.date}}</span>
+              </li>
+              <li v-for="elm in slotVuoti" :key="elm.id" class="col-2">
                 <h3 class="text-uppercase">{{elm.day}}</h3>
                 <span>{{elm.date}}</span>
               </li>
@@ -24,16 +28,16 @@
           <div class="program-details row bg-lightgray">
             <div class="program-details__left">
               <div class="d-flex ai-center flex-wrap">
-                <span class="col-12"><i class="fa-solid fa-clock mr-2"></i>{{program[0].schedule}}</span>
-                <span class="col-12 text-uppercase"><i class="fa-solid fa-location-arrow mr-2"></i>{{program[0].location}}</span>
-                <span class="col-12 text-uppercase speaker-of-day"><i class="fa-solid fa-user mr-2"></i>{{program[0].speaker}}</span>
+                <span class="col-12"><i class="fa-solid fa-clock mr-2"></i>{{program[currentIndex].schedule}}</span>
+                <span class="col-12 text-uppercase"><i class="fa-solid fa-location-arrow mr-2"></i>{{program[currentIndex].location}}</span>
+                <span class="col-12 text-uppercase speaker-of-day"><i class="fa-solid fa-user mr-2"></i>{{program[currentIndex].speaker}}</span>
               </div>
             </div>
             <div class="program-details__right">
               <div class="ml-3">
-                <h4 class="text-uppercase">{{program[0].title}}</h4>
-                <span class="d-block">{{program[0].description}}</span>
-                <img :src="program[0].speakerImg" :alt="program[0].speaker">
+                <h4 class="text-uppercase">{{program[currentIndex].title}}</h4>
+                <span class="d-block">{{program[currentIndex].description}}</span>
+                <img :src="program[currentIndex].speakerImg" :alt="program[currentIndex].speaker">
               </div>
             </div>
           </div>
@@ -69,7 +73,7 @@ data(){
         day : "day 2",
         date : "24 May 2019",
         schedule : "09:00 - 10:30",
-        location : "roma",
+        location : "room a",
         speaker : "patrick spencer",
         title : "lorem ipsum",
         description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus possimus recusandae est nihil velit voluptatem illo deserunt eligendi id qui eos dolore soluta repellendus quis, atque accusantium ipsum minima?",
@@ -79,7 +83,7 @@ data(){
         day : "day 3",
         date : "25 May 2019",
         schedule : "09:00 - 10:30",
-        location : "roma",
+        location : "room a",
         speaker : "janet jones",
         title : "lorem ipsum",
         description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus possimus recusandae est nihil velit voluptatem illo deserunt eligendi id qui eos dolore soluta repellendus quis, atque accusantium ipsum minima?",
@@ -89,12 +93,14 @@ data(){
         day : "day 4",
         date : "26 May 2019",
         schedule : "09:00 - 10:30",
-        location : "roma",
+        location : "room a",
         speaker : "michael dover",
         title : "lorem ipsum",
         description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus possimus recusandae est nihil velit voluptatem illo deserunt eligendi id qui eos dolore soluta repellendus quis, atque accusantium ipsum minima?",
         speakerImg : require("../../assets/img/speaker-4-150x150.jpg")
       },
+    ],
+    slotVuoti : [
       {
         day : "",
         date : "",
@@ -117,6 +123,15 @@ data(){
       },
     ],
     currentIndex : 0,
+  }
+},
+methods : {
+  switchDay(){
+    if(this.currentIndex == 3){
+      this.currentIndex = 0
+    } else {
+      this.currentIndex += 1;
+    }
   }
 }
 }
@@ -156,7 +171,7 @@ data(){
         h3{font-size: 1rem;}
         span{font-size: 0.9rem;}
       }
-      li:hover{background-color: #bf351f;}
+      .programDays:hover{background-color: #bf351f;}
     }
   }
 }

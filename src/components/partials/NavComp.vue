@@ -8,7 +8,7 @@
         <li v-for="elm in topMenu" :key="elm.id" class="text-uppercase"><a :href="elm.url">{{elm.name}}</a></li>
       </ul>
       <div id="search">
-        <input type="search">
+        <input type="search"><i class="fa-solid fa-magnifying-glass"></i>
       </div>
     </div>
   </nav>
@@ -88,6 +88,9 @@ nav{
     }
 
     #search{
+      .fa-solid{
+        color: #868686;
+      }
       input[type=search] {
         text-align: right;
         outline: none;
@@ -95,7 +98,6 @@ nav{
         padding-left: 10px;
         color: transparent;
         cursor: pointer;
-        background: #fff url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px;
         padding: 9px 10px 9px 32px;
         
         -webkit-transition: all .5s;

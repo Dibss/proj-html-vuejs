@@ -148,12 +148,12 @@ data(){
 },
 methods: {
   next: function() {
-      if (this.currentIndex < this.speakers.length - 1){
-        this.currentIndex += 1;
-      } else {
-        this.currentIndex = 0;
-      }
-    },
+    if (this.currentIndex < this.speakers.length - 1){
+      this.currentIndex += 1;
+    } else {
+      this.currentIndex = 0;
+    }
+  },
 
   prev: function() {
     if(this.currentIndex == 0){

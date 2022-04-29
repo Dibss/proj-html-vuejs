@@ -4,26 +4,68 @@
       <div class="row jc-between my-4">
         <h2 class="text-uppercase">speakers</h2>
         <div>
-          <span><i class="fa-solid fa-angle-left"></i></span>
-          <span><i class="fa-solid fa-angle-right"></i></span>
+          <span @click="prev()"><i class="fa-solid fa-angle-left"></i></span>
+          <span @click="next()"><i class="fa-solid fa-angle-right"></i></span>
         </div>
       </div>
       <div>
         <ul class="row">
-          <li v-for="speaker in speakers" :key="speaker.id" class="speaker-card">
+          <li class="speaker-card">
             <div class="speaker-hover">
-              <img :src="speaker.img" :alt="speaker.name">
+              <img :src="speakers[currentIndex].img" :alt="speakers[currentIndex].name">
               <div class="img-mask">
-                <a :href="speaker.twitter" class="d-none"><i class="fa-brands fa-twitter"></i></a>
-                <a :href="speaker.facebook" class="mx-2 d-none"><i class="fa-brands fa-facebook-f"></i></a>
-                <a :href="speaker.linkedin" class="d-none"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a :href="speakers[currentIndex].twitter" class="d-none"><i class="fa-brands fa-twitter"></i></a>
+                <a :href="speakers[currentIndex].facebook" class="mx-2 d-none"><i class="fa-brands fa-facebook-f"></i></a>
+                <a :href="speakers[currentIndex].linkedin" class="d-none"><i class="fa-brands fa-linkedin-in"></i></a>
               </div>
             </div>
             <div class="text-center">
-              <h4 class="text-uppercase">{{speaker.name}}</h4>
-              <span class="fst-italic role">{{speaker.role}}</span>
+              <h4 class="text-uppercase">{{speakers[currentIndex].name}}</h4>
+              <span class="fst-italic role">{{speakers[currentIndex].role}}</span>
             </div>
           </li>
+          <li class="speaker-card">
+            <div class="speaker-hover">
+              <img :src="speakers[currentIndex + 1].img" :alt="speakers[currentIndex + 1].name">
+              <div class="img-mask">
+                <a :href="speakers[currentIndex + 1].twitter" class="d-none"><i class="fa-brands fa-twitter"></i></a>
+                <a :href="speakers[currentIndex + 1].facebook" class="mx-2 d-none"><i class="fa-brands fa-facebook-f"></i></a>
+                <a :href="speakers[currentIndex + 1].linkedin" class="d-none"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h4 class="text-uppercase">{{speakers[currentIndex + 1].name}}</h4>
+              <span class="fst-italic role">{{speakers[currentIndex + 1].role}}</span>
+            </div>
+          </li>
+          <li class="speaker-card">
+            <div class="speaker-hover">
+              <img :src="speakers[currentIndex + 2].img" :alt="speakers[currentIndex + 2].name">
+              <div class="img-mask">
+                <a :href="speakers[currentIndex + 2].twitter" class="d-none"><i class="fa-brands fa-twitter"></i></a>
+                <a :href="speakers[currentIndex + 2].facebook" class="mx-2 d-none"><i class="fa-brands fa-facebook-f"></i></a>
+                <a :href="speakers[currentIndex + 2].linkedin" class="d-none"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h4 class="text-uppercase">{{speakers[currentIndex + 2].name}}</h4>
+              <span class="fst-italic role">{{speakers[currentIndex + 2].role}}</span>
+            </div>
+          </li>
+          <li class="speaker-card">
+            <div class="speaker-hover">
+              <img :src="speakers[currentIndex + 3].img" :alt="speakers[currentIndex + 3].name">
+              <div class="img-mask">
+                <a :href="speakers[currentIndex + 3].twitter" class="d-none"><i class="fa-brands fa-twitter"></i></a>
+                <a :href="speakers[currentIndex + 3].facebook" class="mx-2 d-none"><i class="fa-brands fa-facebook-f"></i></a>
+                <a :href="speakers[currentIndex + 3].linkedin" class="d-none"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h4 class="text-uppercase">{{speakers[currentIndex + 3].name}}</h4>
+              <span class="fst-italic role">{{speakers[currentIndex + 3].role}}</span>
+            </div>
+          </li>        
         </ul>
       </div>
     </div>
@@ -100,8 +142,26 @@ data(){
         facebook : "#",
         linkedin : "#"
       },
-    ]
+    ],
+    currentIndex: 0
   }
+},
+methods: {
+  next: function() {
+      if (this.currentIndex < this.speakers.length - 1){
+        this.currentIndex += 1;
+      } else {
+        this.currentIndex = 0;
+      }
+    },
+
+  prev: function() {
+    if(this.currentIndex == 0){
+      this.currentIndex = this.speakers.length - 1;
+    } else {
+      this.currentIndex -= 1;
+    }
+  },
 }
 }
 </script>

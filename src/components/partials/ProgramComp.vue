@@ -1,47 +1,57 @@
 <template>
-  <div class="program-container">
-    <div class="d-flex ai-center flex-wrap">
-      <div class="program-container__title">
-        <h2 class="text-uppercase">program</h2>
-      </div>
-      <div class="program-container__details">
-        <span class="d-block">This conference run through all 4 days from 23 - 26 May 2016</span>
-        <span class="d-block">We also provide free lunch and coffee break in each day</span>
-      </div>
-      <div class="program-container__link">
-        <a href="#" class="text-capitalize">view full program</a>
-      </div>
-      <div class="program-container__program d-flex flex-wrap">
-        <div class="program-days">
-          <ul class="row">
-            <li v-for="elm in program" :key="elm.id" class="col-2">
-              <h3 class="text-uppercase">{{elm.day}}</h3>
-              <span>{{elm.date}}</span>
-            </li>
-          </ul>
+  <div>
+    <div class="program-container">
+      <div class="d-flex ai-center flex-wrap">
+        <div class="program-container__title">
+          <h2 class="text-uppercase">program</h2>
         </div>
-        <div class="program-details row bg-lightgray">
-          <div class="program-details__left mt-3">
-            <div class="d-flex ai-center flex-wrap">
-              <span class="col-12"><i class="fa-solid fa-clock mr-2"></i>{{program[0].schedule}}</span>
-              <span class="col-12 text-uppercase"><i class="fa-solid fa-location-arrow mr-2"></i>{{program[0].location}}</span>
-              <span class="col-12 text-uppercase speaker-of-day"><i class="fa-solid fa-user mr-2"></i>{{program[0].speaker}}</span>
-            </div>
+        <div class="program-container__details">
+          <span class="d-block">This conference run through all 4 days from 23 - 26 May 2016</span>
+          <span class="d-block">We also provide free lunch and coffee break in each day</span>
+        </div>
+        <div class="program-container__link">
+          <a href="#" class="text-capitalize">view full program</a>
+        </div>
+        <div class="program-container__program d-flex flex-wrap">
+          <div class="program-days">
+            <ul class="row">
+              <li v-for="elm in program" :key="elm.id" class="col-2">
+                <h3 class="text-uppercase">{{elm.day}}</h3>
+                <span>{{elm.date}}</span>
+              </li>
+            </ul>
           </div>
-          <div class="program-details__right">
-            <h4 class="text-uppercase">{{program[0].title}}</h4>
-            <span>{{program[0].description}}</span>
-            <img :src="program[0].speakerImg" :alt="program[0].speaker">
+          <div class="program-details row bg-lightgray">
+            <div class="program-details__left">
+              <div class="d-flex ai-center flex-wrap">
+                <span class="col-12"><i class="fa-solid fa-clock mr-2"></i>{{program[0].schedule}}</span>
+                <span class="col-12 text-uppercase"><i class="fa-solid fa-location-arrow mr-2"></i>{{program[0].location}}</span>
+                <span class="col-12 text-uppercase speaker-of-day"><i class="fa-solid fa-user mr-2"></i>{{program[0].speaker}}</span>
+              </div>
+            </div>
+            <div class="program-details__right">
+              <div class="ml-3">
+                <h4 class="text-uppercase">{{program[0].title}}</h4>
+                <span class="d-block">{{program[0].description}}</span>
+                <img :src="program[0].speakerImg" :alt="program[0].speaker">
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <LocationComp/>
   </div>
 </template>
 
 <script>
+import LocationComp from "./LocationComp.vue";
+
 export default {
 name: 'ProgramComp',
+components : {
+  LocationComp
+},
 data(){
   return{
     program : [
@@ -49,7 +59,7 @@ data(){
         day : "day 1",
         date : "23 May 2019",
         schedule : "09:00 - 10:30",
-        location : "roma",
+        location : "room a",
         speaker : "laurence francis",
         title : "welcoming and introduction",
         description : "Vestibulum ud ligula porta felis euismod semper. Nullarm quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur.",
@@ -105,7 +115,8 @@ data(){
         description : "",
         speakerImg : ""
       },
-    ]
+    ],
+    currentIndex : 0,
   }
 }
 }
@@ -114,7 +125,7 @@ data(){
 <style scoped lang='scss'>
 .program-container{
   width: 70%;
-  margin: 4em auto;
+  margin: 4em auto 3em;
   &__title{
     flex-basis: 20%;
     letter-spacing: 0.2em;
@@ -128,9 +139,9 @@ data(){
     flex-basis: 20%;
     text-align: right;
     a{
-        color: #f72b0c;
-        font-family: 'Libre Bodoni', serif;
-        font-size: 0.9rem;
+      color: #f72b0c;
+      font-family: 'Libre Bodoni', serif;
+      font-size: 0.9rem;
       }
   }
   &__program{
@@ -151,6 +162,8 @@ data(){
 }
 
 .program-details{
+  padding: 2em 0;
+  color: #868686;
   &__left{
     flex-basis: 30%;
     display: flex;
@@ -160,6 +173,20 @@ data(){
   }
   &__right{
     flex-basis: 70%;
+    h4{
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1em;
+    }
+    span{
+      font-size: 0.9rem;
+    }
+    img{
+      margin-top: 1em;
+      max-width: 100%;
+      height: auto;
+      width: 8%;
+    }
   }
 }
 </style>

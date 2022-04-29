@@ -10,7 +10,7 @@
       </div>
       <div>
         <ul class="row">
-          <li class="speaker-card">
+          <li class="speaker-card mr-4">
             <div class="speaker-hover">
               <img :src="speakers[currentIndex].img" :alt="speakers[currentIndex].name">
               <div class="img-mask">
@@ -24,7 +24,7 @@
               <span class="fst-italic role">{{speakers[currentIndex].role}}</span>
             </div>
           </li>
-          <li class="speaker-card">
+          <li class="speaker-card mr-4">
             <div class="speaker-hover">
               <img :src="speakers[currentIndex + 1].img" :alt="speakers[currentIndex + 1].name">
               <div class="img-mask">
@@ -38,7 +38,7 @@
               <span class="fst-italic role">{{speakers[currentIndex + 1].role}}</span>
             </div>
           </li>
-          <li class="speaker-card">
+          <li class="speaker-card mr-4">
             <div class="speaker-hover">
               <img :src="speakers[currentIndex + 2].img" :alt="speakers[currentIndex + 2].name">
               <div class="img-mask">
@@ -52,7 +52,7 @@
               <span class="fst-italic role">{{speakers[currentIndex + 2].role}}</span>
             </div>
           </li>
-          <li class="speaker-card">
+          <li class="speaker-card mr-4">
             <div class="speaker-hover">
               <img :src="speakers[currentIndex + 3].img" :alt="speakers[currentIndex + 3].name">
               <div class="img-mask">

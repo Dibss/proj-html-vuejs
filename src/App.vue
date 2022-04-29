@@ -101,14 +101,6 @@ a{text-decoration: none;}
     .col-#{$i}{-ms-flex-preferred-size: calc(100% / 12) * $i; max-width: calc(100% / 12) * $i; flex-basis: calc(100% / 12) * $i;}
 }
 
-@for $i from 1 through 12 {
-    .offleft-#{$i}{margin-left: calc(100% / 12) * $i;}
-}
-
-@for $i from 1 through 12 {
-    .offright-#{$i}{margin-left: calc(100% / 12) * $i;}
-}
-
 // variables
 $white : #fff;
 $mine-shaft : #272727;

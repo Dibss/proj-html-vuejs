@@ -22,8 +22,8 @@
       <div>
         <h3 class="text-uppercase my-4">subscribe for updates</h3>
         <form>
-          <input type="text" placeholder="Please fill your email" required>
-          <span class="text-uppercase btn"><a href="#">subscribe</a></span>
+          <input type="email" placeholder="Please fill your email" v-model="email" required>
+          <button type="submit" class="text-uppercase btn" @click.prevent="subscribe()" @keyup.enter="subscribe()">subscribe</button>
         </form>
       </div>
     </div>
@@ -35,6 +35,7 @@ export default {
 name: 'SubscribeComp',
 data(){
   return{
+    email : ""
     }
 },
 created(){
@@ -59,6 +60,9 @@ methods : {
         document.getElementById("countdown").innerHTML = "EXPIRED";
       }
     }, 1000);
+  },
+  subscribe(){
+    this.email = "";
   }
 }
 }
@@ -93,8 +97,10 @@ methods : {
   .btn{
     background-color: #f72b0c;
     padding: 0.8em 1.5em;
-  }
-  .btn a{
+    background-color: #f72b0c;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: 5px;
     color: #fff;
   }
 }

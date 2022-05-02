@@ -153,6 +153,7 @@ methods: {
     } else {
       this.currentIndex = 0;
     }
+    console.log(this.currentIndex)
   },
 
   prev: function() {
@@ -161,7 +162,11 @@ methods: {
     } else {
       this.currentIndex -= 1;
     }
+    console.log(this.currentIndex)
   },
+},
+mounted(){
+  console.log(this.currentIndex)
 }
 }
 </script>
